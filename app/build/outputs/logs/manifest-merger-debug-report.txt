@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\33bb180144f9c3214050d68f4da554d8\AndroidManifest.xml:17:1-28:12
@@ -15,20 +15,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Mohamed Nag
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\1fea8ce7507a67cb525eb6b81d7e02c2\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\e0c320169972b774e9b2d05a230a617f\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\cae8ead04266596479d4163014fb4565\AndroidManifest.xml:17:1-30:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
-		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
-		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:11-69
@@ -37,7 +37,7 @@ ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\mai
 	android:name
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:7:5-22:19
+ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:7:5-23:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:25:5-29:19
@@ -87,7 +87,9 @@ ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\mai
 	android:name
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.udacity.sandwichclub.DetailActivity
-ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:21:9-52
+ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:21:9-22:57
+	android:parentActivityName
+		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:22:13-55
 	android:name
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:21:19-49
 uses-sdk

@@ -3,7 +3,6 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -53,6 +52,7 @@ public class DetailActivity extends AppCompatActivity {
                 .into(mDetailActivityViewHolder.SANDWICH_IMAGE_VIEW);
 
         setTitle(sandwich.getMainName());
+
     }
 
     private void closeOnError() {
@@ -64,7 +64,7 @@ public class DetailActivity extends AppCompatActivity {
         mDetailActivityViewHolder.SANDWICH_NAME_TEXT_VIEW.setText(sandwich.getMainName());
         mDetailActivityViewHolder.SANDWICH_ALSO_KNOWN_AS_TEXT_VIEW.setText(Utility.filterListAsString(sandwich.getAlsoKnownAs()));
         mDetailActivityViewHolder.SANDWICH_DESCRIPTION_TEXT_VIEW.setText(sandwich.getDescription());
-        mDetailActivityViewHolder.SANDWICH_PLACE_OF_ORIGIN_TEXT_VIEW.setText(R.string.detail_place_of_origin_label);
+        mDetailActivityViewHolder.SANDWICH_PLACE_OF_ORIGIN_TEXT_VIEW.setText(sandwich.getPlaceOfOrigin());
         mDetailActivityViewHolder.SANDWICH_INGREDIENTS_TEXT_VIEW.setText(Utility.filterListAsString(sandwich.getIngredients()));
     }
 }

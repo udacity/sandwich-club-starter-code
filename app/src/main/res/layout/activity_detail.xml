@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/sandwich_image"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/sandwich_picture_content_description"
@@ -23,22 +23,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/sandwich_main_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="main name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view8" />
+        <TextView
+            android:id="@+id/sandwich_main_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="main name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view8" />
 
         <TextView
             android:id="@+id/textView"
@@ -68,27 +68,29 @@
 
         <TextView
             android:id="@+id/sandwich_desiption"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:textSize="15sp"
-            android:textColor="@android:color/black"
             android:fontFamily="sans-serif"
             android:text="descrition_con"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sandwich_also_known" />
 
         <TextView
             android:id="@+id/sandwich_also_known"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="also known cont"
+            android:textAlignment="center"
             android:textColor="@android:color/holo_blue_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,21 +98,15 @@
 
         <TextView
             android:id="@+id/sandwich_place_of_origin"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="TextView"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
             android:textColor="@android:color/black"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/barrier" />
-
-        <android.support.constraint.Barrier
-            android:id="@+id/barrier"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:barrierDirection="end"
-            app:constraint_referenced_ids="textView2,textView"
-            tools:layout_editor_absoluteX="126dp" />
 
         <View
             android:id="@+id/view2"
@@ -152,7 +148,6 @@
         <View
             android:id="@+id/view5"
             android:layout_width="0dp"
-
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:alpha="0.7"
@@ -162,27 +157,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sandwich_ingredients" />
 
-    <View
-        android:id="@+id/view8"
-
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:alpha="0.7"
-        android:background="@android:color/holo_blue_bright"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+        <View
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:alpha="0.7"
+            android:background="@android:color/holo_blue_bright"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sandwich_image" />
 
         <TextView
             android:id="@+id/sandwich_ingredients"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="ingredients_con"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:textAlignment="textStart"
             android:textColor="@android:color/black"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/view6"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="textView2,textView"
+            tools:layout_editor_absoluteX="16dp" />
 
     </android.support.constraint.ConstraintLayout>
 

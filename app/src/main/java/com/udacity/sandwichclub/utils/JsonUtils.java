@@ -1,5 +1,6 @@
 package com.udacity.sandwichclub.utils;
 
+
 import com.udacity.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class JsonUtils {
     private static final String NAME = "name";
-    private static final String IMAGE = "image;";
+    private static final String IMAGE = "image";
     private static final String MAIN_NAME = "mainName";
     private static final String DESCRIPTION = "description";
     private static final String INGREDIENTS = "ingredients";
@@ -35,7 +36,7 @@ public class JsonUtils {
             placeOfOrigin = jsonObject.getString(PLACE_OF_ORIGIN);
 
             alsoKnownAsList = jsonArrayFilter(nameJsonObject.getJSONArray(ALSO_KNOWN_AS));
-            ingredientsList = jsonArrayFilter(nameJsonObject.getJSONArray(INGREDIENTS));
+            ingredientsList = jsonArrayFilter(jsonObject.getJSONArray(INGREDIENTS));
 
             sandwich = new Sandwich(
                     mainName,
