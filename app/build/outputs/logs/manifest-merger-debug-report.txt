@@ -4,7 +4,7 @@ ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\mai
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ea1f68017bae5cdc8eea98fb14f699a1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\33bb180144f9c3214050d68f4da554d8\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\1358ae588671bad035cc317e528f4f25\AndroidManifest.xml:17:1-28:12
@@ -38,8 +38,8 @@ ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\mai
 		ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:5:22-64
 application
 ADDED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml:7:5-22:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ea1f68017bae5cdc8eea98fb14f699a1\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ea1f68017bae5cdc8eea98fb14f699a1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\33bb180144f9c3214050d68f4da554d8\AndroidManifest.xml:22:5-26:19
@@ -94,8 +94,8 @@ uses-sdk
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
 INJECTED from E:\google nanodegree\WorkPlace\sandwich-club-starter-code\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ea1f68017bae5cdc8eea98fb14f699a1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ea1f68017bae5cdc8eea98fb14f699a1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta1] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta1.aar\69f0f2a2506f44ced0cff34a4c94d43d\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\566a6e8aa0d712f63e9a5661bfb19fd4\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Mohamed Nagy\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\33bb180144f9c3214050d68f4da554d8\AndroidManifest.xml:20:5-44
