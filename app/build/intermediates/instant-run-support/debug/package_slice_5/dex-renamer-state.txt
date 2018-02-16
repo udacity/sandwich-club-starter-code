@@ -1,0 +1,4 @@
+#Thu Feb 15 13:16:28 PST 2018
+base.0=E\:\\google nanodegree\\WorkPlace\\sandwich-club-starter-code\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+path.0=classes.dex
+renamed.0=classes.dex
