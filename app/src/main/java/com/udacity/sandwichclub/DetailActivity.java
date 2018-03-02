@@ -8,11 +8,11 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
-import com.udacity.sandwichclub.utils.JsonUtils;
+import com.udacity.sandwichclub.utils.SandwichJsonParser;
 
 public class DetailActivity extends AppCompatActivity {
 
-    public static final String EXTRA_POSITION = "extra_position";
+    public static final String EXTRA_SANDWICH_NAME = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
     @Override
@@ -26,17 +26,17 @@ public class DetailActivity extends AppCompatActivity {
         if (intent == null) {
             closeOnError();
         }
-
-        int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
+//TODO CHANGE TO NAME
+        int position = intent.getIntExtra(EXTRA_SANDWICH_NAME, DEFAULT_POSITION);
         if (position == DEFAULT_POSITION) {
-            // EXTRA_POSITION not found in intent
+            // EXTRA_SANDWICH_NAME not found in intent
             closeOnError();
             return;
         }
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
-        Sandwich sandwich = JsonUtils.parseSandwichJson(json);
+        Sandwich sandwich = SandwichJsonParser.parseSandwichJson(json);
         if (sandwich == null) {
             // Sandwich data unavailable
             closeOnError();
