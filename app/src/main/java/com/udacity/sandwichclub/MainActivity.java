@@ -8,31 +8,47 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import com.udacity.sandwichclub.main.MainPresenter;
+import com.udacity.sandwichclub.main.MainView;
+import com.udacity.sandwichclub.main.ResourceProvider;
+
+public class MainActivity extends AppCompatActivity implements MainView {
+    private MainPresenter mainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
+        mainPresenter = new MainPresenter(new ResourceProvider(getResources()));
+        mainPresenter.attachView(this);
+    }
+
+    @Override
+    public void bindSandwiches(final String[] sandwiches) {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, sandwiches);
 
-        // Simplification: Using a ListView instead of a RecyclerView
         ListView listView = findViewById(R.id.sandwiches_listview);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                launchDetailActivity(position);
+                mainPresenter.sandwichSelected(sandwiches[position]);
             }
         });
     }
 
-    private void launchDetailActivity(int position) {
+    @Override
+    public void showSandwichDetails(String sandwichName) {
         Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(DetailActivity.EXTRA_POSITION, position);
+        intent.putExtra(DetailActivity.EXTRA_SANDWICH_NAME, sandwichName);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mainPresenter.detachView();
     }
 }

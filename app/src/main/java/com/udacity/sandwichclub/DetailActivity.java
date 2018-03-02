@@ -12,7 +12,7 @@ import com.udacity.sandwichclub.utils.SandwichJsonParser;
 
 public class DetailActivity extends AppCompatActivity {
 
-    public static final String EXTRA_POSITION = "extra_position";
+    public static final String EXTRA_SANDWICH_NAME = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
     @Override
@@ -26,10 +26,10 @@ public class DetailActivity extends AppCompatActivity {
         if (intent == null) {
             closeOnError();
         }
-
-        int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
+//TODO CHANGE TO NAME
+        int position = intent.getIntExtra(EXTRA_SANDWICH_NAME, DEFAULT_POSITION);
         if (position == DEFAULT_POSITION) {
-            // EXTRA_POSITION not found in intent
+            // EXTRA_SANDWICH_NAME not found in intent
             closeOnError();
             return;
         }
