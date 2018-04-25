@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -15,12 +16,25 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    //create references for views in detail view
+
+    TextView origin_tv;
+    TextView also_known_tv;
+    TextView description_tv;
+    TextView ingredients_tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        //Store views in references
+
         ImageView ingredientsIv = findViewById(R.id.image_iv);
+        origin_tv = findViewById(R.id.origin_tv);
+        also_known_tv = findViewById(R.id.also_known_tv);
+        description_tv = findViewById(R.id.description_tv);
+        ingredients_tv = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -42,6 +56,10 @@ public class DetailActivity extends AppCompatActivity {
             closeOnError();
             return;
         }
+            origin_tv.setText(sandwich.getPlaceOfOrigin());
+//            also_known_tv.setText((CharSequence) sandwich.getAlsoKnownAs());
+            description_tv.setText(sandwich.getDescription());
+//            ingredients_tv.setText(sandwich.getIngredients());
 
         populateUI();
         Picasso.with(this)
