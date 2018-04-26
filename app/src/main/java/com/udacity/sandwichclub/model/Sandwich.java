@@ -1,9 +1,12 @@
 package com.udacity.sandwichclub.model;
 
+import android.util.Log;
+
 import java.util.List;
 
 public class Sandwich {
 
+    private final static String TAG = Sandwich.class.getName();
     private String mainName;
     private List<String> alsoKnownAs = null;
     private String placeOfOrigin;
@@ -18,6 +21,8 @@ public class Sandwich {
     }
 
     public Sandwich(String mainName, List<String> alsoKnownAs, String placeOfOrigin, String description, String image, List<String> ingredients) {
+        Log.i(TAG, "Sandwich: received: " + mainName + ", " + alsoKnownAs.toString() + ", " +
+        placeOfOrigin + ", " + description + ", " + image + ", " + ingredients.toString());
         this.mainName = mainName;
         this.alsoKnownAs = alsoKnownAs;
         this.placeOfOrigin = placeOfOrigin;
