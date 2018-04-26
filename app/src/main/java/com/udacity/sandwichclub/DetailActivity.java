@@ -57,9 +57,9 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
             origin_tv.setText(sandwich.getPlaceOfOrigin());
-//            also_known_tv.setText((CharSequence) sandwich.getAlsoKnownAs());
+            also_known_tv.setText(sandwich.parseStringList(sandwich.getAlsoKnownAs()));
             description_tv.setText(sandwich.getDescription());
-//            ingredients_tv.setText(sandwich.getIngredients());
+            ingredients_tv.setText(sandwich.parseStringList(sandwich.getIngredients()));
 
         populateUI();
         Picasso.with(this)

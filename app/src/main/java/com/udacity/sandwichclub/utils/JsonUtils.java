@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,9 +25,31 @@ public class JsonUtils {
 
             JSONObject jsonSandwichObject = new JSONObject(json);
             JSONObject jsonSandwichName = jsonSandwichObject.getJSONObject("name");
-            JSONArray jsonAlsoKnownAs = jsonSandwichName.getJSONArray("alsoKnownAs");
-            JSONArray jsonIngredients = jsonSandwichObject.getJSONArray("ingredients");
 
+            //If there is nothing at the 0 index of the JSON array, we need an alternative response
+            String[] data = {" "};
+            JSONArray emptyArray = new JSONArray(Arrays.asList(data));
+
+            JSONArray jsonAlsoKnownAs;
+
+            if(jsonSandwichName.getJSONArray("alsoKnownAs").length() > 0) {
+
+                jsonAlsoKnownAs = jsonSandwichName.getJSONArray("alsoKnownAs");
+
+            } else{
+                jsonAlsoKnownAs = emptyArray;
+            }
+
+
+            JSONArray jsonIngredients;
+
+            if(jsonSandwichObject.getJSONArray("ingredients").length() > 0) {
+
+                jsonIngredients = jsonSandwichObject.getJSONArray("ingredients");
+
+            } else {
+                jsonIngredients = emptyArray;
+            }
 
             //Store the values from JSONObject to use when creating a new sandwich
 

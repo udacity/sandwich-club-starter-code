@@ -1,5 +1,6 @@
 package com.udacity.sandwichclub.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Sandwich {
@@ -67,10 +68,22 @@ public class Sandwich {
     }
 
     public List<String> getIngredients() {
+
         return ingredients;
     }
 
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public String parseStringList(List<String> stringList){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for(String string : stringList) {
+            stringBuilder.append(string);
+            stringBuilder.append(" ");
+        }
+
+        return stringBuilder.toString();
     }
 }
