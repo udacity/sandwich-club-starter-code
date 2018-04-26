@@ -76,6 +76,8 @@ public class Sandwich {
         this.ingredients = ingredients;
     }
 
+    //Takes a String list array and returns a String
+
     public String parseStringList(List<String> stringList){
         StringBuilder stringBuilder = new StringBuilder();
 

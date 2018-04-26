@@ -21,7 +21,7 @@ public class JsonUtils {
         Sandwich newSandwich = new Sandwich();
 
         try {
-            //Create JSONArray from json String that was passed in
+            //Create JSONObjects from json String that was passed in
 
             JSONObject jsonSandwichObject = new JSONObject(json);
             JSONObject jsonSandwichName = jsonSandwichObject.getJSONObject("name");
@@ -30,11 +30,15 @@ public class JsonUtils {
             String[] data = {" "};
             JSONArray emptyArray = new JSONArray(Arrays.asList(data));
 
+            //Create JSONArrays for both the ArrayList data types
+
             JSONArray jsonAlsoKnownAs;
 
             if(jsonSandwichName.getJSONArray("alsoKnownAs").length() > 0) {
 
                 jsonAlsoKnownAs = jsonSandwichName.getJSONArray("alsoKnownAs");
+
+             //If JSONArray is empty, we want to set it to the empty array to prevent errors
 
             } else{
                 jsonAlsoKnownAs = emptyArray;
@@ -46,6 +50,8 @@ public class JsonUtils {
             if(jsonSandwichObject.getJSONArray("ingredients").length() > 0) {
 
                 jsonIngredients = jsonSandwichObject.getJSONArray("ingredients");
+
+             //If JSONArray is empty, we want to set it to the empty array to prevent errors
 
             } else {
                 jsonIngredients = emptyArray;
@@ -73,8 +79,10 @@ public class JsonUtils {
             String description = jsonSandwichObject.getString("description");
 
             String image = jsonSandwichObject.getString("image");
+
+            //Some testing that I used to make sure valid JSON was being returned from Json objects/arrays
+
             Log.i(TAG, "parseSandwichJson: " + mainName + " " + placeOfOrigin + " " + image + " " + jsonAlsoKnownAs.get(0) + " " + jsonIngredients.get(0) + " " + description);
-//            List<String> ingredients = Collections.singletonList(jsonSandwichObject.getString(5));
 
             //Create new sandwich object using values above
 
