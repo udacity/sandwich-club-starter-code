@@ -21,14 +21,11 @@ public class JsonUtils {
         Sandwich newSandwich = new Sandwich();
 
         try {
-            //Create JSONObjects from json String that was passed in
+            //Create JSONObjects
 
             JSONObject jsonSandwichObject = new JSONObject(json);
             JSONObject jsonSandwichName = jsonSandwichObject.getJSONObject("name");
 
-            //If there is nothing at the 0 index of the JSON array, we need an alternative response
-            String[] data = {" "};
-            JSONArray emptyArray = new JSONArray(Arrays.asList(data));
 
             //Create JSONArrays for both the ArrayList data types
 
@@ -38,10 +35,8 @@ public class JsonUtils {
 
                 jsonAlsoKnownAs = jsonSandwichName.getJSONArray("alsoKnownAs");
 
-             //If JSONArray is empty, we want to set it to the empty array to prevent errors
-
-            } else{
-                jsonAlsoKnownAs = emptyArray;
+            } else {
+                jsonAlsoKnownAs = null;
             }
 
 
@@ -51,13 +46,11 @@ public class JsonUtils {
 
                 jsonIngredients = jsonSandwichObject.getJSONArray("ingredients");
 
-             //If JSONArray is empty, we want to set it to the empty array to prevent errors
-
             } else {
-                jsonIngredients = emptyArray;
+                jsonIngredients = null;
             }
 
-            //Store the values from JSONObject to use when creating a new sandwich
+            //Store values to pass in sandwich object
 
             String mainName = jsonSandwichName.getString("mainName");
 
@@ -65,24 +58,27 @@ public class JsonUtils {
 
             List<String> alsoKnownAs = new ArrayList<String>();
 
-            for(int i = 0; i < jsonAlsoKnownAs.length(); i++) {
-                alsoKnownAs.add(jsonAlsoKnownAs.getString(i));
+            if (jsonAlsoKnownAs != null) {
+
+                for (int i = 0; i < jsonAlsoKnownAs.length(); i++) {
+                    alsoKnownAs.add(jsonAlsoKnownAs.getString(i));
+                }
             }
 
             List<String> ingredients = new ArrayList<String>();
 
-            for(int i = 0; i < jsonIngredients.length(); i++) {
-                ingredients.add(jsonIngredients.getString(i));
+            if(jsonIngredients != null) {
+
+                for (int i = 0; i < jsonIngredients.length(); i++) {
+                    ingredients.add(jsonIngredients.getString(i));
+                }
+
             }
 
             String placeOfOrigin = jsonSandwichObject.getString("placeOfOrigin");
             String description = jsonSandwichObject.getString("description");
 
             String image = jsonSandwichObject.getString("image");
-
-            //Some testing that I used to make sure valid JSON was being returned from Json objects/arrays
-
-            Log.i(TAG, "parseSandwichJson: " + mainName + " " + placeOfOrigin + " " + image + " " + jsonAlsoKnownAs.get(0) + " " + jsonIngredients.get(0) + " " + description);
 
             //Create new sandwich object using values above
 

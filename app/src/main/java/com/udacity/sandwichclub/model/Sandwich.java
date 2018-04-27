@@ -81,11 +81,16 @@ public class Sandwich {
     public String parseStringList(List<String> stringList){
         StringBuilder stringBuilder = new StringBuilder();
 
-        for(String string : stringList) {
-            stringBuilder.append(string);
-            stringBuilder.append(" ");
-        }
+        if(stringList != null) {
+
+            for (String string : stringList) {
+                stringBuilder.append(string);
+                stringBuilder.append(" ");
+            }
 
         return stringBuilder.toString();
+        } else {
+            return null;
+        }
     }
 }
