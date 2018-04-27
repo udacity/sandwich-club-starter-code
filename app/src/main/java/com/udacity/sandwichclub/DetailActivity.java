@@ -1,13 +1,13 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.udacity.sandwichclub.databinding.ActivityDetailBinding;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
@@ -15,27 +15,17 @@ import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
-    
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    ImageView ingredientsIv;
-    TextView alsoKnownTv;
-    TextView ingredientsTv;
-    TextView descriptionTv;
-    TextView originTv;
+    ActivityDetailBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
 
-        ingredientsIv = findViewById(R.id.image_iv);
-         alsoKnownTv= findViewById(R.id.also_known_tv);
-         ingredientsTv= findViewById(R.id.ingredients_tv);
-         descriptionTv= findViewById(R.id.description_tv);
-         originTv= findViewById(R.id.origin_tv);
-        
         Intent intent = getIntent();
         if (intent == null) {
             closeOnError();
@@ -58,9 +48,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         populateUI(sandwich);
-        Picasso.with(this)
-                .load(sandwich.getImage())
-                .into(ingredientsIv);
+
 
         setTitle(sandwich.getMainName());
     }
@@ -71,10 +59,13 @@ public class DetailActivity extends AppCompatActivity {
     }
 
      private void populateUI(Sandwich sandwich) {
-        alsoKnownTv.setText(listToString(sandwich.getAlsoKnownAs()));
-        ingredientsTv.setText(listToString(sandwich.getIngredients()));
-        descriptionTv.setText(sandwich.getDescription());
-        originTv.setText(sandwich.getPlaceOfOrigin());
+         Picasso.with(this)
+                 .load(sandwich.getImage())
+                 .into(mBinding.imageIv);
+        mBinding.alsoKnownTv.setText(listToString(sandwich.getAlsoKnownAs()));
+        mBinding.ingredientsTv.setText(listToString(sandwich.getIngredients()));
+        mBinding.descriptionTv.setText(sandwich.getDescription());
+        mBinding.originTv.setText(sandwich.getPlaceOfOrigin());
     }
 
     private static String listToString(List<String> strings){
