@@ -1,5 +1,6 @@
 package com.udacity.sandwichclub.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,12 +20,41 @@ public class Sandwich {
     }
 
     public Sandwich(String mainName, List<String> alsoKnownAs, String placeOfOrigin, String description, String image, List<String> ingredients) {
+
+        List<String> noDataArray = new ArrayList<>();
+        noDataArray.add(0,"No Data found");
+
+        String noDataString = "No Data found";
+
         this.mainName = mainName;
-        this.alsoKnownAs = alsoKnownAs;
-        this.placeOfOrigin = placeOfOrigin;
-        this.description = description;
+
+        //During construction of Sandwich, testing for empty values and if so, setting value to "No Data Found"
+
+        if (alsoKnownAs.isEmpty()) {
+            this.alsoKnownAs = noDataArray;
+        } else {
+            this.alsoKnownAs = alsoKnownAs;
+        }
+
+        if (placeOfOrigin.isEmpty()) {
+            this.placeOfOrigin = noDataString;
+        } else {
+            this.placeOfOrigin = placeOfOrigin;
+        }
+
+        if (description.isEmpty()) {
+            this.description = noDataString;
+        } else {
+            this.description = description;
+        }
+
         this.image = image;
-        this.ingredients = ingredients;
+
+        if (ingredients.isEmpty()) {
+            this.ingredients = noDataArray;
+        } else {
+            this.ingredients = ingredients;
+        }
     }
 
     public String getMainName() {

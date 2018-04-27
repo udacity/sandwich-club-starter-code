@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,6 +67,13 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(image_iv);
+
+        Picasso.with(this)
+                .load(sandwich.getImage())
+                .error(R.drawable.ic_broken_image_black_24dp)
+                .into(image_iv);
+
+
 
         setTitle(sandwich.getMainName());
     }
