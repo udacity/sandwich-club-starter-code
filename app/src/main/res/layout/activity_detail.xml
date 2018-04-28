@@ -136,7 +136,7 @@
                     android:layout_marginLeft="@dimen/activity_horizontal_margin_default"
                     android:layout_marginRight="@dimen/activity_horizontal_margin_small"
                     android:layout_marginStart="@dimen/activity_horizontal_margin_default"
-                     android:layout_weight="1"
+                     android:layout_weight="3"
                     android:text="@string/detail_ingredients_label"
                     android:textStyle="bold"
                     />
@@ -149,7 +149,7 @@
                     android:layout_marginLeft="@dimen/activity_horizontal_margin_small"
                     android:layout_marginRight="@dimen/activity_horizontal_margin_default"
                     android:layout_marginStart="@dimen/activity_horizontal_margin_small"
-                     android:layout_weight="3"
+                     android:layout_weight="7"
                     />
             </LinearLayout>
 
