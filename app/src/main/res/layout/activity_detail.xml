@@ -1,59 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.udacity.sandwichclub.DetailActivity">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/image_iv"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/origin_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/image_iv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_image_height"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sandwich_picture_content_description"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+            <android.support.constraint.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/also_know_as_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:text="@string/detail_also_known_as_label"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/image_iv" />
 
-    <TextView
-        android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/also_known_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/label_margin_left"
+                android:layout_marginStart="@dimen/label_margin_left"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toEndOf="@+id/also_know_as_label"
+                app:layout_constraintTop_toTopOf="@+id/also_know_as_label" />
 
-    <TextView
-        android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/place_of_origin_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:text="@string/detail_place_of_origin_label"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/also_known_tv" />
 
-    <TextView
-        android:id="@+id/also_known_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/origin_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/label_margin_left"
+                android:layout_marginStart="@dimen/label_margin_left"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toEndOf="@+id/place_of_origin_label"
+                app:layout_constraintTop_toTopOf="@+id/place_of_origin_label" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_description_label"
-        android:textStyle="bold" />
-</FrameLayout>
+            <TextView
+                android:id="@+id/description_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:text="@string/detail_description_label"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/label_margin_left"
+                android:layout_marginStart="@dimen/label_margin_left"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toEndOf="@+id/description_label"
+                app:layout_constraintTop_toTopOf="@+id/description_label" />
+
+
+            <TextView
+                android:id="@+id/ingredients_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:text="@string/detail_ingredients_label"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+
+            <TextView
+                android:id="@+id/ingredients_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/label_margin_left"
+                android:layout_marginStart="@dimen/label_margin_left"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+                app:layout_constraintStart_toEndOf="@+id/ingredients_label"
+                app:layout_constraintTop_toTopOf="@+id/ingredients_label" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -2,4 +2,7 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="detail_image_height">200dp</dimen>
+    <dimen name="label_margin_top">8dp</dimen>
+    <dimen name="label_margin_left">4dp</dimen>
 </resources>
