@@ -11,19 +11,27 @@ import java.util.List;
 
 public class JsonUtils {
 
+    private static final String SANDWICH_NAME = "name";
+    private static final String SANDWICH_MAIN_NAME = "mainName";
+    private static final String ALSO_KNOWN_AS = "alsoKnownAs";
+    private static final String PLACE_OF_ORIGIN = "placeOfOrigin";
+    private static final String DESCRIPTION = "description";
+    private static final String IMAGE = "image";
+    private static final String INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) {
         Sandwich sandwich  = new Sandwich();
 
         try {
             JSONObject sandwichData =  new JSONObject(json);
-            JSONObject sandwichNameData = sandwichData.getJSONObject("name");
-            sandwich.setMainName( sandwichNameData.getString("mainName") );
-            sandwich.setAlsoKnownAs( getJsonList(sandwichNameData.getJSONArray("alsoKnownAs")));
+            JSONObject sandwichNameData = sandwichData.optJSONObject(SANDWICH_NAME);
+            sandwich.setMainName( sandwichNameData.optString(SANDWICH_MAIN_NAME) );
+            sandwich.setAlsoKnownAs( getJsonList(sandwichNameData.optJSONArray(ALSO_KNOWN_AS)));
 
-            sandwich.setPlaceOfOrigin( sandwichData.getString("placeOfOrigin") );
-            sandwich.setDescription( sandwichData.getString("description") );
-            sandwich.setImage( sandwichData.getString("image") );
-            sandwich.setIngredients( getJsonList(sandwichData.getJSONArray("ingredients")));
+            sandwich.setPlaceOfOrigin( sandwichData.optString(PLACE_OF_ORIGIN) );
+            sandwich.setDescription( sandwichData.optString(DESCRIPTION) );
+            sandwich.setImage( sandwichData.optString(IMAGE) );
+            sandwich.setIngredients( getJsonList(sandwichData.optJSONArray(INGREDIENTS)));
 
          } catch (JSONException e) {
             e.printStackTrace();

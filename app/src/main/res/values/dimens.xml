@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_xsmall">0dp</dimen>
+    <dimen name="activity_horizontal_margin_small">2dp</dimen>
+    <dimen name="activity_horizontal_margin_default">8dp</dimen>
+    <dimen name="activity_horizontal_margin_large">16dp</dimen>
+    <dimen name="activity_vertical_margin_xsmall">0dp</dimen>
+    <dimen name="activity_vertical_margin_small">2dp</dimen>
+    <dimen name="activity_vertical_margin_default">8dp</dimen>
+    <dimen name="activity_vertical_margin_medium">12dp</dimen>
+    <dimen name="activity_vertical_margin_large">16dp</dimen>
+    <dimen name="image_height">200dp</dimen>
+     <dimen name="activity_minimum_height">0dp</dimen>
+     <dimen name="activity_minimum_width">0dp</dimen>
 </resources>

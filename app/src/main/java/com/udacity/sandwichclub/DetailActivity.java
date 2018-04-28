@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -17,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+    private static final String TAG = "tag";
 
     ActivityDetailBinding mBinding;
 
@@ -59,8 +62,16 @@ public class DetailActivity extends AppCompatActivity {
     }
 
      private void populateUI(Sandwich sandwich) {
+
+        // Plate_with_fork_and_spoon
+         // Author: BSGStudio
+         //Licence: Free for commercial with attribution.
+         // Please give a backlink to all-free-download.com.
+        //http://all-free-download.com/free-vector/download/plate-with-spoon-knife-and-fork_312083.html
          Picasso.with(this)
                  .load(sandwich.getImage())
+                 .placeholder(R.drawable.ic_cook)
+                 .error(R.drawable.ic_default_sandwich)
                  .into(mBinding.imageIv);
         mBinding.alsoKnownTv.setText(listToString(sandwich.getAlsoKnownAs()));
         mBinding.ingredientsTv.setText(listToString(sandwich.getIngredients()));
@@ -69,14 +80,12 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private static String listToString(List<String> strings){
-        StringBuilder formattedString = new StringBuilder();
+        String string = "";
 
-         if(strings !=null && !strings.isEmpty()){
-             for (String string:strings) {
-                 formattedString.append(string).append("\n");
-             }
-         }
-
-        return formattedString.toString();
+        if (strings != null) {
+            string = TextUtils.join("\n", strings);
+            Log.d(TAG,string);
+        }
+        return string;
     }
 }
