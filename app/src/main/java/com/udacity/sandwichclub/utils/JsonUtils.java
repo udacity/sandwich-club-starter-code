@@ -11,9 +11,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 
 public class JsonUtils {
+
+    private static final String TAG = "JsonUtils";
 
     private static final String SANDWICH_NAME = "name";
     private static final String SANDWICH_MAIN_NAME = "mainName";
@@ -49,7 +50,12 @@ public class JsonUtils {
             sandwich.setDescription(jSondwich.getString(SANDWICH_DESCRIPTION));
             sandwich.setImage(jSondwich.getString(SANDWICH_IMAGE));
             sandwich.setIngredients(ingredientList);
-            Log.i(TAG, "parseSandwichJson: Printing Sandwich Contents" + sandwich.toString());
+            Log.i(TAG, "sandwich.getMainName: " + sandwich.getMainName());
+            Log.i(TAG, "sandwich.getAlsoKnownAs: " + sandwich.getAlsoKnownAs());
+            Log.i(TAG, "sandwich.getPlaceOfOrigin: " + sandwich.getPlaceOfOrigin());
+            Log.i(TAG, "sandwich.getDescription: " + sandwich.getDescription());
+            Log.i(TAG, "sandwich.getImage: " + sandwich.getImage());
+            Log.i(TAG, "sandwich.getIngredients: " + sandwich.getIngredients());
 
         } catch (final JSONException e) {
             e.printStackTrace();
