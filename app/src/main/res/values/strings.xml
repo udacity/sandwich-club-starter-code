@@ -12,6 +12,7 @@
 
     <!-- Error messages-->
     <string name="detail_error_message">Sandwich data not available</string>
+    <string name="sandwich_name_label">Name:</string>
 
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
