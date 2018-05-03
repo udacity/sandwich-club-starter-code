@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ */
 package com.udacity.sandwichclub.utils;
 
 import com.udacity.sandwichclub.model.Sandwich;
@@ -5,11 +8,23 @@ import com.udacity.sandwichclub.model.Sandwich;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility functions to handle Sandwich JSON data.
+ */
 public class JsonUtils {
 
+    /**
+     * This method parses JSON String and returns a Sandwich Object
+     * describing details about the sandwich
+     *
+     * @param json JSON String
+     * @return Sandwich Object
+     * @throws JSONException If JSON data cannot be properly parsed
+     */
     public static Sandwich parseSandwichJson(String json) throws JSONException {
 
         /* Constants - To hold the keys needed to extract the info from JSON String */
@@ -21,7 +36,7 @@ public class JsonUtils {
         final String SANDWICH_IMAGE = "image";
         final String SANDWICH_INGREDIENTS = "ingredients";
 
-        /* Sandwich Object to hold each Sandwich Details */
+        /* Local Variable - To hold each Sandwich Details */
         Sandwich sandwich = new Sandwich();
 
         if (json == null) {
@@ -41,24 +56,25 @@ public class JsonUtils {
 
         /* Set the Sandwich Details */
         sandwich.setMainName(sandwichMainName);
-        List<String> listAlsoKnownAs = new ArrayList<String>();
-        if (sandwichAlsoKnownAs != null) {
-            for (int i=0; i<sandwichAlsoKnownAs.length(); i++){
-                listAlsoKnownAs.add(sandwichAlsoKnownAs.getString(i));
-            }
-        }
-        sandwich.setAlsoKnownAs(listAlsoKnownAs);
+        sandwich.setAlsoKnownAs(jsonArrayToListString(sandwichAlsoKnownAs));
         sandwich.setPlaceOfOrigin(sandwichPlaceOfOrigin);
         sandwich.setDescription(sandwichDescription);
         sandwich.setImage(sandwichImage);
-        List<String> listIngredients = new ArrayList<String>();
-        if (sandwichIngredients != null) {
-            for (int i=0; i<sandwichIngredients.length(); i++){
-                listIngredients.add(sandwichIngredients.getString(i));
-            }
-        }
-        sandwich.setIngredients(listIngredients);
+        sandwich.setIngredients(jsonArrayToListString(sandwichIngredients));
 
         return sandwich;
+    }
+
+    /**
+     * Helper Method to convert a JSONArray to a List<String>
+     */
+    private static List<String> jsonArrayToListString(JSONArray jsonArray) throws JSONException {
+        List<String> list = new ArrayList<String>();
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                list.add(jsonArray.getString(i));
+            }
+        }
+        return list;
     }
 }

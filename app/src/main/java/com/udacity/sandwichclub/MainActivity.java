@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ */
 package com.udacity.sandwichclub;
 
 import android.content.Intent;

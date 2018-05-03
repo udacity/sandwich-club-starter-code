@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ */
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
@@ -14,6 +17,11 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 import org.json.JSONException;
 
+import java.util.List;
+
+/**
+ * Displays details about each Sandwich
+ */
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
@@ -33,10 +41,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        mAlsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
-        mIngredients = (TextView) findViewById(R.id.ingredients_tv);
-        mPlaceOfOrigin = (TextView) findViewById(R.id.origin_tv);
-        mDescription = (TextView) findViewById(R.id.description_tv);
+        mAlsoKnownAs = findViewById(R.id.also_known_tv);
+        mIngredients = findViewById(R.id.ingredients_tv);
+        mPlaceOfOrigin = findViewById(R.id.origin_tv);
+        mDescription = findViewById(R.id.description_tv);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
@@ -79,10 +87,21 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Populates the UI's View with the correct sandwich's details
+     */
     private void populateUI() {
-        mAlsoKnownAs.setText(TextUtils.join(", ", mSandwich.getAlsoKnownAs()));
-        mIngredients.setText(TextUtils.join(", ", mSandwich.getIngredients()));
+        mAlsoKnownAs.setText(joinStringsInList(mSandwich.getAlsoKnownAs()));
+        mIngredients.setText(joinStringsInList(mSandwich.getIngredients()));
         mPlaceOfOrigin.setText(mSandwich.getPlaceOfOrigin());
         mDescription.setText(mSandwich.getDescription());
     }
+
+    /**
+     * Helper Method to join Strings in a List with ","
+     */
+    private String joinStringsInList(List<String> list){
+        return TextUtils.join(", ", list);
+    }
+
 }
