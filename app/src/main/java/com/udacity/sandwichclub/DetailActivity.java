@@ -3,7 +3,9 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -17,10 +19,24 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    /* Member Variables to hold references to TextViews in Detail Activity Layout */
+    private TextView mAlsoKnownAs;
+    private TextView mIngredients;
+    private TextView mPlaceOfOrigin;
+    private TextView mDescription;
+
+    /* Member Variables to hold a reference to current Sandwich */
+    private Sandwich mSandwich;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        mAlsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
+        mIngredients = (TextView) findViewById(R.id.ingredients_tv);
+        mPlaceOfOrigin = (TextView) findViewById(R.id.origin_tv);
+        mDescription = (TextView) findViewById(R.id.description_tv);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
@@ -38,13 +54,13 @@ public class DetailActivity extends AppCompatActivity {
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
-        Sandwich sandwich = null;
+        mSandwich = null;
         try {
-            sandwich = JsonUtils.parseSandwichJson(json);
+            mSandwich = JsonUtils.parseSandwichJson(json);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        if (sandwich == null) {
+        if (mSandwich == null) {
             // Sandwich data unavailable
             closeOnError();
             return;
@@ -52,10 +68,10 @@ public class DetailActivity extends AppCompatActivity {
 
         populateUI();
         Picasso.with(this)
-                .load(sandwich.getImage())
+                .load(mSandwich.getImage())
                 .into(ingredientsIv);
 
-        setTitle(sandwich.getMainName());
+        setTitle(mSandwich.getMainName());
     }
 
     private void closeOnError() {
@@ -64,6 +80,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
-
+        mAlsoKnownAs.setText(TextUtils.join(", ", mSandwich.getAlsoKnownAs()));
+        mIngredients.setText(TextUtils.join(", ", mSandwich.getIngredients()));
+        mPlaceOfOrigin.setText(mSandwich.getPlaceOfOrigin());
+        mDescription.setText(mSandwich.getDescription());
     }
 }
