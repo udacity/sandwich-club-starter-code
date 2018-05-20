@@ -16,12 +16,22 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    private TextView originTv;
+    private TextView alsoKnownTv;
+    private TextView descriptionTv;
+    private TextView ingredientsTv;
+    private ImageView imageIv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        ImageView imageIv = findViewById(R.id.image_iv);
+        originTv = findViewById(R.id.origin_tv);
+        alsoKnownTv = findViewById(R.id.also_known_tv);
+        descriptionTv = findViewById(R.id.description_tv);
+        ingredientsTv = findViewById(R.id.ingredients_tv);
+        imageIv = findViewById(R.id.image_iv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -58,20 +68,22 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
-        TextView originTv = findViewById(R.id.origin_tv);
+        // Resource intensive findViewById lives in onCreate for one time population
         originTv.append(" " + sandwich.getPlaceOfOrigin());
-
-        TextView alsoKnownTv = findViewById(R.id.also_known_tv);
         for (String aka: sandwich.getAlsoKnownAs()) {
-            alsoKnownTv.append("\n" + aka);
+            if (!aka.isEmpty()) {
+                alsoKnownTv.append("\nN/A");
+            } else {
+                alsoKnownTv.append("\n" + aka);
+            }
         }
-
-        TextView descriptionTv = findViewById(R.id.description_tv);
         descriptionTv.append(" " + sandwich.getDescription());
-
-        TextView ingredientsTv = findViewById(R.id.ingredients_tv);
         for (String ingredient: sandwich.getIngredients()) {
-            ingredientsTv.append("\n" + ingredient);
+            if (!ingredient.isEmpty()) {
+                ingredientsTv.append("\nN/A");
+            } else {
+                ingredientsTv.append("\n" + ingredient);
+            }
         }
     }
 }
