@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -14,6 +15,11 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+    private Sandwich mSandwich = null;
+    private TextView mSandwichOriginTextView;
+    private TextView mSandwichAkaTextView;
+    private TextView mSandwichDescriptionTextView;
+    private TextView mSandwichIngredientsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +42,8 @@ public class DetailActivity extends AppCompatActivity {
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
-        Sandwich sandwich = JsonUtils.parseSandwichJson(json);
-        if (sandwich == null) {
+        mSandwich = JsonUtils.parseSandwichJson(json);
+        if (mSandwich == null) {
             // Sandwich data unavailable
             closeOnError();
             return;
@@ -45,10 +51,10 @@ public class DetailActivity extends AppCompatActivity {
 
         populateUI();
         Picasso.with(this)
-                .load(sandwich.getImage())
+                .load(mSandwich.getImage())
                 .into(ingredientsIv);
 
-        setTitle(sandwich.getMainName());
+        setTitle(mSandwich.getMainName());
     }
 
     private void closeOnError() {
@@ -57,6 +63,26 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
+        //COMPLETED (2) Fill in the method to populate the UI in detail screen
+        initializeComponents();
 
+        mSandwichOriginTextView.setText(mSandwich.getPlaceOfOrigin());
+
+        for (String alias : mSandwich.getAlsoKnownAs()) {
+            mSandwichAkaTextView.append(alias + "\n");
+        }
+
+        mSandwichDescriptionTextView.setText(mSandwich.getDescription());
+
+        for (String ingredient : mSandwich.getIngredients()) {
+            mSandwichIngredientsTextView.append(ingredient + "\n");
+        }
+    }
+
+    private void initializeComponents() {
+        mSandwichOriginTextView = (TextView) findViewById(R.id.origin_tv);
+        mSandwichAkaTextView = (TextView) findViewById(R.id.also_known_tv);
+        mSandwichDescriptionTextView = (TextView) findViewById(R.id.description_tv);
+        mSandwichIngredientsTextView = (TextView) findViewById(R.id.ingredients_tv);
     }
 }
