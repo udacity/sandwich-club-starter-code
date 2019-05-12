@@ -3,10 +3,12 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
@@ -16,6 +18,7 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
     private Sandwich mSandwich = null;
+    private ImageView mSandwichImage;
     private TextView mSandwichOriginTextView;
     private TextView mSandwichAkaTextView;
     private TextView mSandwichDescriptionTextView;
@@ -52,7 +55,17 @@ public class DetailActivity extends AppCompatActivity {
         populateUI();
         Picasso.with(this)
                 .load(mSandwich.getImage())
-                .into(ingredientsIv);
+                .into(ingredientsIv, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                    }
+
+                    @Override
+                    public void onError() {
+                        mSandwichImage.setVisibility(View.GONE);
+                    }
+                });
+
 
         setTitle(mSandwich.getMainName());
     }
@@ -84,5 +97,6 @@ public class DetailActivity extends AppCompatActivity {
         mSandwichAkaTextView = (TextView) findViewById(R.id.also_known_tv);
         mSandwichDescriptionTextView = (TextView) findViewById(R.id.description_tv);
         mSandwichIngredientsTextView = (TextView) findViewById(R.id.ingredients_tv);
+        mSandwichImage = (ImageView) findViewById(R.id.image_iv);
     }
 }
