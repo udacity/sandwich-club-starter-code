@@ -67,14 +67,14 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
-        mDescriptionTextView.setText(mSandwich.getDescription());
+        mDescriptionTextView.setText(mSandwich.getDescription().trim());
 
-        /*for(String anAlias:mSandwich.getAlsoKnownAs())
-            mAlsoKnownAsView.append(anAlias + "\n\n\n");*/
+        for(String anAlias:mSandwich.getAlsoKnownAs())
+            mAlsoKnownAsView.append(anAlias + "\n");
 
-        mPlaceOfOriginTextView.setText(mSandwich.getPlaceOfOrigin());
+        mPlaceOfOriginTextView.setText(mSandwich.getPlaceOfOrigin().trim());
 
-        /*for(String anIngredient: mSandwich.getIngredients())
-            mIngredientsTextView.append(anIngredient+ "\n\n\n");*/
+        for(String anIngredient: mSandwich.getIngredients())
+            mIngredientsTextView.append(anIngredient+ "\n");
     }
 }
