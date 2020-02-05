@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.udacity.sandwichclub.DetailActivity">
-
-
     <ImageView
         android:id="@+id/image_iv"
         android:layout_width="match_parent"
@@ -96,4 +97,7 @@
             </ScrollView>
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>
+</ScrollView>
+
